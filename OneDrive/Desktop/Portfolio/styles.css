@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Teko:wght@300..700&display=swap');
+
+
+/* Primary Stylesheet.
+  - Justin Jaques
+*/
+
+
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: rgba(10,25,47,255);
+    scroll-behavior: smooth;
+    animation: gradientAnimation 15s ease infinite;
+    width: 100%; /* Use percentage to make it responsive */
+    height: auto; /* Let the height adjust based on content */
+}
+
+#wrapper {
+  margin-left:auto;
+  margin-right:auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Homepage Text */
+#Intro, #Hi__Im, #Intro2  {
+    font-weight: 400;
+    font-family: "Playfair Display", sans-serif;
+    opacity: 100%;
+    text-align: center;
+    color: white;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    margin: rem 0;
+    position: relative;
+    animation: fadeIn 3s;
+}
+
+#Intro {
+    font-size: 5rem; /* Adjust to a responsive size */
+    color: rgb(177, 253, 177);
+    transform: translateY(9rem)
+}
+
+#Hi__Im {
+    font-size: 3rem;
+    transform: translate(-1rem, -15rem);
+  
+
+}
+
+#Intro2 {
+    font-size: 1rem;
+    transform: translateY(-29rem)
+}
+
+#JLogo {
+    position: absolute;
+    left: 20px;
+  
+    animation: moveLogoIn 1.5s ease-in-out forwards;
+    
+}
+
+#aboutPage, #projectsPage, #contactPage {
+    font-size: 4rem;
+    color: rgb(177, 253, 177);
+    font-family: "Playfair Display";
+    text-align: center;
+    margin-top: 2rem;
+    padding: 3rem;
+}
+
+#aboutMeText, #projectsText, #contactText {
+    font-size: 1rem;
+    color: white;
+    font-family: "Playfair Display";
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 2rem;
+}
+
+#contactForm {
+    max-width: 80%; /* Set a max-width for responsiveness */
+    margin: 20px auto;
+    padding: 10px 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5rem);
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 2px;
+    font-family: "Teko";
+    font-size: 1rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: rgba(10, 25, 47, 0.8);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: "Playfair Display";
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(177, 253, 177, 0.8);
+}
+
+
+
+button.About, button.Projects, button.Contact {
+
+   background: transparent;
+   color: white;
+   border: transparent;
+   font-family: "Playfair Display";
+   display: flex;
+   justify-content: flex-end; /* Align buttons to the right */
+   gap: 4rem; /* Add some space between buttons */
+   position: relative;
+   bottom: 58rem;
+   left: 50rem;
+   animation: fadeIn 5s;
+}
+
+button.About:hover, button.Projects:hover, button.Contact:hover {
+  transform: scale(2);
+  cursor: grab;
+}
+
+
+/* For the fade in effect */
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+/* Vertical Lines */
+.vertical-line {
+    width: 1px;
+    height: 150px;
+    background-color: white;
+    margin: 6rem auto;
+    transform: translateX(-1rem);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #Intro {
+        font-size: 2rem;
+    }
+
+    #Hi__Im, #Intro2 {
+        font-size: 1.5rem;
+    }
+
+    #aboutPage, #projectsPage, #contactPage {
+        font-size: 2rem;
+    }
+
+    #aboutMeText, #projectsText, #contactText {
+        font-size: 0.9rem;
+    }
+
+    #contactForm {
+        padding: 10px 15px;
+    }
+
+    input[type="text"],
+    textarea {
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Handling Animation */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveLogoIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
